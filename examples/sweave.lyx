@@ -738,14 +738,12 @@ name "tab:xtable-demo"
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-
-\backslash
-begin{center}
 \end_layout
 
 \begin_layout Plain Layout
@@ -772,13 +770,6 @@ print(xtable(sapply(iris[,-5], quantile)), floating=FALSE)
 \begin_layout Plain Layout
 
 @
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{center}
 \end_layout
 
 \end_inset
@@ -853,15 +844,9 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset ERT
 status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{center}
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -876,13 +861,6 @@ pairs(iris, col = iris$Species)
 \begin_layout Plain Layout
 
 @
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{center}
 \end_layout
 
 \end_inset
@@ -925,15 +903,9 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset ERT
 status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{center}
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -953,13 +925,6 @@ boxplot(Sepal.Length~Species,data=iris,horizontal=TRUE,xlab='Sepal.Length')
 \begin_layout Plain Layout
 
 @
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{center}
 \end_layout
 
 \end_inset
@@ -1344,6 +1309,79 @@ label=
  is the chunk label.
  If any chunk causes an error in R, you will see the error message here
  immediately.
+\end_layout
+
+\begin_layout Standard
+Another known issue is the Sweave code chunk may fail when we change the
+ alignment of the chunk paragraph in LyX (using 
+\family sans
+Paragraph settings
+\family default
+), because LyX may add a macro like 
+\family typewriter
+
+\backslash
+centering{}
+\family default
+ before the code chunk without adding a new line, which will lead to a code
+ chunk like this:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering{}<<xtable-demo,results=tex,echo=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is not a legitimate Sweave code chunk, since 
+\family typewriter
+<<>>=
+\family default
+ must start in a new line with nothing before it.
+ Therefore we recommend you to double check the real source code via 
+\family sans
+View\SpecialChar \menuseparator
+View Source
+\family default
+ when changing the alignment of a chunk paragraph, and make sure 
+\family typewriter
+<<>>=
+\family default
+ appears in a new line.
+ This explains why we manually added an empty line in the code chunk in
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:xtable-demo"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
