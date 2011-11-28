@@ -131,17 +131,8 @@ https://github.com/downloads/yihui/lyx/sweave.pdf
 \begin_inset Flex FragileFrame
 status open
 
-\begin_layout Plain Layout
-\begin_inset Flex FragileTitle
-status open
-
-\begin_layout Plain Layout
+\begin_layout FrameTitle
 A fragile frame with R code
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -182,17 +173,8 @@ summary(lm(mpg ~ hp, data = mtcars))
 \begin_inset Flex FragileFrameAllowframebreaks
 status open
 
-\begin_layout Plain Layout
-\begin_inset Flex FragileTitle
-status open
-
-\begin_layout Plain Layout
+\begin_layout FrameTitle
 A fragile frame spans over two pages
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Plain Layout
