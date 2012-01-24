@@ -259,7 +259,7 @@ PATH
 \family sans
 PATH
 \family default
- under Windows, you may use the R script 
+ under Windows, you may either use the R script 
 \family sans
 add-R-path-win.R
 \family default
@@ -274,15 +274,64 @@ https://github.com/yihui/lyx
 
 \end_inset
 
- to change it automatically (we recommend you to learn 
+ to change it automatically (not recommended; you should learn 
 \family sans
 PATH
 \family default
- anyway).
+ anyway), or go to 
+\family sans
+Tools\SpecialChar \menuseparator
+Preferences\SpecialChar \menuseparator
+Paths\SpecialChar \menuseparator
+PATH prefix
+\family default
+ to add the bin path of R (recommended), which is often like 
+\family sans
+C:
+\backslash
+Program Files
+\backslash
+R
+\backslash
+R-x.x.x
+\backslash
+bin
+\family default
+ and you can find it in R:
 \end_layout
 
 \begin_layout Standard
-If 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<where-is-R-bin,eval=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+R.home('bin')
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+After you have done these changes, you need to reconfigure LyX by 
+\family sans
+Tools\SpecialChar \menuseparator
+Reconfigure
+\family default
+.
+ If 
 \family typewriter
 Rscript
 \family default
@@ -1553,29 +1602,16 @@ lyxsweave.R
 \end_layout
 
 \begin_layout Standard
-Beside the support for the official Sweave in R, we have a few customized
- R scripts to unofficially support other R packages under 
-\begin_inset Flex URL
-status collapsed
-
-\begin_layout Plain Layout
-
-https://github.com/yihui/lyx
-\end_layout
-
-\end_inset
-
-, e.g., the 
-\series bold
-pgfSweave
-\series default
- and the 
+Beside the support for the official Sweave in R, the 
 \series bold
 knitr
 \series default
- package.
- The former supports cache and tikz graphics in R, and the latter is an
- alternative literate programming engine to Sweave which has even more features.
+ package is also supported, which is an alternative tool to Sweave; the
+ corresponding module is named 
+\family sans
+Rnw (knitr)
+\family default
+.
 \end_layout
 
 \end_body
