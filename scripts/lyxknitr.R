@@ -13,21 +13,14 @@
 ## knitr is an alternative package to Sweave, and has more features
 ## and flexibility; see https://yihui.github.com/knitr
 
-## Rscript $$s/scripts/lyxsweave.R $$p$$i $$p$$o $$e $$r
+## Rscript $$s/scripts/lyxknitr.R $$p$$i $$p$$o $$e $$r
 ## $$p the path of the output (temp dir)
 ## $$i the file name of the input Rnw
 ## $$o the tex output
 ## $$r path to the original input file (the lyx document)
 ## $$e encoding (e.g. 'UTF-8')
 
-if (!require('knitr')) {
-    ## install knitr if not available; currently knitr is not on CRAN yet
-    if (!require('devtools'))
-        install.packages('devtools', repos = 'http://cran.r-project.org')
-    library(devtools)
-    install_github('knitr', 'yihui')
-    library(knitr)
-}
+library(knitr)
 
 .cmdargs = commandArgs(TRUE)
 
@@ -39,11 +32,17 @@ options(encoding = .cmdargs[3])
 ## work correctly without specifying the full path
 setwd(.cmdargs[4])
 
-## copy the Rnw file to the current working directory
-file.copy(.cmdargs[1], '.', overwrite = TRUE)
-## run knit() to get .tex
-knit(basename(.cmdargs[1]))
+## copy the Rnw file to the current working directory if it does not exist
+.tmp.file = tempfile(); .rnw.file = basename(.cmdargs[1])
+.rnw.exists = file.exists(.rnw.file)
+if (.rnw.exists) file.rename(.rnw.file, .tmp.file)
+file.copy(.cmdargs[1], '.')
+## run knit() to get .tex or .R
+knit(.rnw.file, tangle = 'tangle' %in% .cmdargs)
 
 setwd(.cmdargs[4])
-unlink(basename(.cmdargs[1]))  # remove the copied .Rnw
+## remove the copied .Rnw if it did not exist, otherwise move the original one back
+if (.rnw.exists) file.rename(.tmp.file, .rnw.file) else unlink(.rnw.file)
 file.rename(basename(.cmdargs[2]), .cmdargs[2])  # move .tex to the temp dir
+rm(.tmp.file, .rnw.file, .rnw.exists)  # clean up these variables
+
