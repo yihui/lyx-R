@@ -1,0 +1,1 @@
+\bind "C-M-i" "command-sequence ert-insert; unicode-insert 0x3C;  unicode-insert 0x3C; unicode-insert 0x3E; unicode-insert 0x3E; unicode-insert 0x3D; break-paragraph; break-paragraph; unicode-insert 0x40; up;"
