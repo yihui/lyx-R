@@ -1,0 +1,37 @@
+\documentclass[a4paper,twoside]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{RJournal}
+\usepackage[round]{natbib}
+\bibliographystyle{abbrvnat}
+\usepackage{amsmath,amssymb,array}
+\usepackage{booktabs}
+
+\makeatletter
+\providecommand{\LyX}{L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
+\makeatother
+
+%% load any required packages here
+<<setup, include=FALSE>>=
+render_sweave()
+set_header(highlight = '')
+@
+
+\begin{document}
+
+%% do not edit, for illustration only
+\fancyhf{}
+\fancyhead[LO,RE]{\textsc{Contributed Article}}
+\fancyhead[RO,LE]{\thepage}
+\fancyfoot[L]{The R Journal Vol. X/Y, Month, Year}
+\fancyfoot[R]{ISSN 2073-4859}
+
+%% replace RJtemplate with your article
+\begin{article}
+<<body, child='RJournal-lyx.Rnw'>>=
+<<write-bib, include=FALSE>>=
+write_bib(c('knitr'), file = 'RJournal-pkg.bib')
+@
+\end{article}
+
+\end{document}

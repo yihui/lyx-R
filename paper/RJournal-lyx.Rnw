@@ -1,0 +1,66 @@
+\title{Using Sweave and \pkg{knitr} with \LyX{} 2.0}
+
+\author{by Yihui Xie, Gregor Gorjanc and Jean-Marc Lasgouttes}
+
+\maketitle
+
+\abstract{
+
+  \citet{gorjanc2008} introduced how to lower the \LaTeX{}/Sweave
+  learning curve by using Sweave \citep{leisch2002} in \LyX{}. The
+  article was based on \LyX{} 1.4.4 released in 2006, and several
+  changes have taken place since then. Now \LyX{} 2.0 \citep{lyx2013}
+  has built-in support to Sweave and \pkg{knitr} \citep{R-knitr}, and
+  we introduce the changes as well as a few new features in this
+  article.
+
+}
+
+\section{Introduction}
+
+\LyX{} is a front-end for \LaTeX{}.
+
+Background stories.
+
+\section{Configuration}
+
+only need to take care of PATH now (Windows only); Sweave users need
+to take care of Sweave.sty
+
+\section{Examples}
+
+quick examples, screenshots
+
+\section{\LyX{} Modules}
+
+how the modules work
+
+\section{Troubleshooting}
+
+error messages
+
+\section{Customization}
+
+can use custom scripts under user directory
+
+\section{Discussions}
+
+\bibliography{RJournal-lyx.bib,RJournal-pkg.bib}
+
+\address{Yihui Xie\\
+  Department of Statistics, Iowa State University\\
+  102 Snedecor Hall, Ames, IA 50011\\
+  USA}\\
+\email{xie@yihui.name}
+
+\address{Gregor Gorjanc\\
+  Affiliation\\
+  Address\\
+  Country}\\
+\email{author2@work}
+
+\address{Jean-Marc Lasgouttes\\
+  Affiliation\\
+  Address\\
+  Country}\\
+\email{author3@work}
