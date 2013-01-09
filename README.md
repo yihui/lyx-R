@@ -16,7 +16,7 @@ Aside from the official manual of Sweave in LyX, which is an example file itself
 
 ## Downloads
 
-Usually I do not put binary files under version control (in GIT), so I upload them to the [Downloads section](https://github.com/yihui/lyx/downloads). You may go there for some PDF documents, which are the output from LyX in my system.
+Usually I do not put binary files under version control (in GIT), so I upload them separately at https://bitbucket.org/stat/lyx/downloads
 
 ## Contributions? Comments?
 
