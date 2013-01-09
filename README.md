@@ -4,7 +4,7 @@ This repository provides some (unofficial) support files for using R with LyX.
 
 ## The `scripts` directory
 
-- `lyxknitr.R` is for the [**knitr** package](https://yihui.name/knitr) (it has already been included in official LyX, so you do not actually need it)
+- `lyxknitr.R` is for the [**knitr** package](http://yihui.name/knitr) (it has already been included in official LyX, so you do not actually need it)
 
 ## The `examples` directory
 
