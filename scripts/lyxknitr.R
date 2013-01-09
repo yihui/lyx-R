@@ -21,11 +21,7 @@
 ## $$e encoding (e.g. 'UTF-8')
 
 library(knitr)
-
 .cmdargs = commandArgs(TRUE)
-
-.orig.enc = getOption("encoding")
-options(encoding = .cmdargs[3])
 
 ## the working directory is the same with the original .lyx file; you
 ## can put your data files there and functions like read.table() can
@@ -34,4 +30,5 @@ setwd(.cmdargs[4])
 opts_knit$set(root.dir = getwd())
 
 ## run knit() to get .tex or .R
-knit(.cmdargs[1], output = .cmdargs[2], tangle = 'tangle' %in% .cmdargs)
+knit(.cmdargs[1], output = .cmdargs[2], encoding = .cmdargs[3],
+     tangle = 'tangle' %in% .cmdargs)
