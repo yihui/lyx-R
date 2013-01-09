@@ -1,0 +1,312 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass RJournal
+\use_default_options true
+\begin_modules
+knitr
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine natbib_authoryear
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Using Sweave and knitr with LyX 2.0
+\end_layout
+
+\begin_layout Author
+by Yihui Xie, Gregor Gorjanc and Jean-Marc Lasgouttes
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Abstract
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citet
+key "gorjanc2008"
+
+\end_inset
+
+ introduced how to lower the LaTeX/Sweave learning curve by using Sweave
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "leisch2002"
+
+\end_inset
+
+ in LyX.
+ The article was based on LyX 1.4.4 released in 2006, and several changes
+ have taken place since then.
+ Now LyX 2.0 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "lyx2013"
+
+\end_inset
+
+ has built-in support to Sweave and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pkg{knitr}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "R-knitr"
+
+\end_inset
+
+, and we introduce the changes as well as a few new features in this article.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+LyX is a front-end for LaTeX.
+\end_layout
+
+\begin_layout Standard
+Background stories.
+ 
+\end_layout
+
+\begin_layout Section
+Configuration
+\end_layout
+
+\begin_layout Standard
+only need to take care of PATH now (Windows only); Sweave users need to
+ take care of Sweave.sty
+\end_layout
+
+\begin_layout Section
+Examples
+\end_layout
+
+\begin_layout Standard
+quick examples, screenshots
+\end_layout
+
+\begin_layout Section
+\begin_inset Argument
+status collapsed
+
+\begin_layout Plain Layout
+Ly
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+X Modules
+\end_layout
+
+\end_inset
+
+LyX Modules
+\end_layout
+
+\begin_layout Standard
+how the modules work
+\end_layout
+
+\begin_layout Section
+Troubleshooting
+\end_layout
+
+\begin_layout Standard
+error messages
+\end_layout
+
+\begin_layout Section
+Customization
+\end_layout
+
+\begin_layout Standard
+can use custom scripts under user directory
+\end_layout
+
+\begin_layout Section
+Discussions
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "LyX2-RJournal,LyX2-pkgs"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Address
+status collapsed
+
+\begin_layout Plain Layout
+Yihui Xie
+\begin_inset Newline newline
+\end_inset
+
+Department of Statistics, Iowa State University
+\begin_inset Newline newline
+\end_inset
+
+102 Snedecor Hall, Ames, IA 50011
+\begin_inset Newline newline
+\end_inset
+
+USA
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex Email
+status collapsed
+
+\begin_layout Plain Layout
+xie@yihui.name
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Address
+status collapsed
+
+\begin_layout Plain Layout
+Gregor Gorjanc
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex Email
+status collapsed
+
+\begin_layout Plain Layout
+gregor.gorjanc@bf.uni-lj.si
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Address
+status collapsed
+
+\begin_layout Plain Layout
+Jean-Marc Lasgouttes
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex Email
+status collapsed
+
+\begin_layout Plain Layout
+asgouttes@lyx.org
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
