@@ -30,5 +30,11 @@ setwd(.cmdargs[4])
 opts_knit$set(root.dir = getwd())
 
 ## run knit() to get .tex or .R
-knit(.cmdargs[1], output = .cmdargs[2], encoding = .cmdargs[3],
-     tangle = 'tangle' %in% .cmdargs)
+if (packageVersion('knitr') < '1.0') {
+  .orig.enc = getOption("encoding")
+  options(encoding = .cmdargs[3])
+  knit(.cmdargs[1], output = .cmdargs[2], tangle = 'tangle' %in% .cmdargs)
+} else {
+  knit(.cmdargs[1], output = .cmdargs[2], encoding = .cmdargs[3],
+       tangle = 'tangle' %in% .cmdargs)
+}
