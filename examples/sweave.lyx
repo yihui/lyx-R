@@ -260,33 +260,26 @@ PATH
 \family sans
 PATH
 \family default
- under Windows, you may either use the R script 
-\family sans
-add-R-path-win.R
-\family default
- in the repository 
+ under Windows, you may either learn it (e.g.
+ 
 \begin_inset Flex URL
 status collapsed
 
 \begin_layout Plain Layout
 
-https://github.com/yihui/lyx
+http://www.computerhope.com/issues/ch000549.htm
 \end_layout
 
 \end_inset
 
- to change it automatically (not recommended; you should learn 
-\family sans
-PATH
-\family default
- anyway), or go to 
+), or go to 
 \family sans
 Tools\SpecialChar \menuseparator
 Preferences\SpecialChar \menuseparator
 Paths\SpecialChar \menuseparator
 PATH prefix
 \family default
- to add the bin path of R (recommended), which is often like 
+ to add the bin path of R, which is often like 
 \family sans
 C:
 \backslash
