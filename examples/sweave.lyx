@@ -1255,7 +1255,7 @@ ae
 \end_layout
 
 \begin_layout Section
-Trouble Shooting
+Troubleshooting
 \end_layout
 
 \begin_layout Standard
@@ -1266,7 +1266,7 @@ View\SpecialChar \menuseparator
 View Messages
 \family default
 .
- This is extremely helpful for trouble shooting -- the process of R will
+ This is extremely helpful for troubleshooting -- the process of R will
  be shown in the message panel, and we will be able to know which chunk
  goes wrong in cases of errors.
  For example, when you compile this document, you can see messages like
