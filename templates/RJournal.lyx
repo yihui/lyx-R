@@ -64,43 +64,6 @@ knitr
 \begin_body
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-You have to put the body of your article inside the 
-\begin_inset Quotes eld
-\end_inset
-
-article
-\begin_inset Quotes erd
-\end_inset
-
- enviroment defined by RJournal.sty.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{article}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -117,7 +80,7 @@ render_sweave() # use Schunk, Sinput and Soutput environments defined by
 
 \begin_layout Plain Layout
 
-set_header(highlight = '') # no need to 
+set_header(highlight = '') # no need for 
 \backslash
 usepackage{Sweave}
 \end_layout
@@ -140,17 +103,8 @@ Capitalized Title Here
 by Author A and Author B
 \end_layout
 
-\begin_layout Standard
-\begin_inset Flex Abstract
-status open
-
-\begin_layout Plain Layout
+\begin_layout Abstract
 An abstract of less than 150 words.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -175,10 +129,12 @@ R code chunks
 
 \begin_layout Standard
 Press 
-\family sans
-Ctrl+L
-\family default
- and input R code chunks which will be compiled by the 
+\begin_inset Info
+type  "shortcut"
+arg   "ert-insert"
+\end_inset
+
+ and input R code chunks which will be compiled with the 
 \series bold
 knitr
 \series default
@@ -258,7 +214,7 @@ status open
 \backslash
 
 \backslash
-linewidth', fig.align='center'>>=
+linewidth', fig.align='center', dev=c('pdf','eps')>>=
 \end_layout
 
 \begin_layout Plain Layout
@@ -310,7 +266,7 @@ name "fig:sample-figure"
 status open
 
 \begin_layout Plain Layout
-When you insert BibTeX bibliography here, do not use any bib styles.
+When you insert a BibTeX bibliography here, do not use any bib styles.
  The R Journal has declared the style to be 
 \begin_inset Quotes eld
 \end_inset
@@ -337,31 +293,28 @@ bibfiles "biblio"
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Flex Address
-status collapsed
-
-\begin_layout Plain Layout
+\begin_layout Address
 Author A
 \begin_inset Newline newline
 \end_inset
 
-Press Ctrl+Enter to input
+Press 
+\begin_inset Info
+type  "shortcut"
+arg   "newline-insert newline"
+\end_inset
+
+ to input
 \begin_inset Newline newline
 \end_inset
 
 address here
-\end_layout
-
-\end_inset
-
-
 \begin_inset Newline newline
 \end_inset
 
 
 \begin_inset Flex Email
-status collapsed
+status open
 
 \begin_layout Plain Layout
 author.a@email
@@ -372,62 +325,17 @@ author.a@email
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Flex Address
-status collapsed
-
-\begin_layout Plain Layout
+\begin_layout Address
 Author B
-\end_layout
-
-\end_inset
-
-
 \begin_inset Newline newline
 \end_inset
 
 
 \begin_inset Flex Email
-status collapsed
-
-\begin_layout Plain Layout
-author.b@email
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{article}
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-Note 
-\backslash
-begin{article} in the beginning of this article; now we close the 
-\begin_inset Quotes eld
-\end_inset
-
-article
-\begin_inset Quotes erd
-\end_inset
-
- environment.
+author.b@email
 \end_layout
 
 \end_inset

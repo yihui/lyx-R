@@ -23,35 +23,62 @@ AddToPreamble
 	\fancyhead[RO,LE]{\thepage}
 	\fancyfoot[L]{The R Journal Vol. X/Y, Month, Year}
 	\fancyfoot[R]{ISSN 2073-4859}
+
+	\AtBeginDocument{%
+	  \begin{article}
+	}
+
+	\AtEndDocument{%
+	  \end{article}
+	}
+	
 EndPreamble
 
-InsetLayout "Flex:Abstract"
-	LabelString           "Abstract"
+Style Abstract
+	Margin                First_Dynamic
 	LatexType             Command
-	LaTexName             abstract
-	LyXType               Custom
+	InTitle               0
+	LatexName             abstract
+	LeftMargin            MMM
+	LabelIndent           MMM
+	RightMargin           MMM
+	ParIndent             MM
+	TopSep                0.7
+	BottomSep             0.7
+	Align                 Block
+	LabelType             Static
+	LabelString           "Abstract."
+	LabelSep              M
+	Font
+	  Size                Small
+	EndFont
 	LabelFont
+	  Shape               Smallcaps
 	  Color               latex
 	EndFont
 End
 
-InsetLayout "Flex:Address"
-	LabelString           "Address"
+Style Address
+	Category	      FrontMatter
+	Margin                Static
 	LatexType             Command
-	LaTexName             address
-	LyXType               Custom
-	LabelFont
-	  Color               latex
-	EndFont
+	LatexName             address
+	ParSkip               0.4
+	BottomSep             1.5
+	ParSep                1.5
+	Align                 Left
+	AlignPossible         Block, Left, Right, Center
+	LabelType             No_Label
 End
 
 InsetLayout "Flex:Email"
 	LabelString           "Email"
 	LatexType             Command
+	Decoration            Classic
 	LaTexName             email
 	LyXType               Custom
+	ForcePlain            1
 	LabelFont
 	  Color               latex
 	EndFont
 End
-
