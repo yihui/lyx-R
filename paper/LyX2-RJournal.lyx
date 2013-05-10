@@ -65,22 +65,6 @@ knitr
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{article}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
@@ -120,10 +104,10 @@ by Yihui Xie, Gregor Gorjanc and Jean-Marc Lasgouttes
 \end_layout
 
 \begin_layout Standard
-\begin_inset Flex Abstract
-status open
 
-\begin_layout Plain Layout
+\end_layout
+
+\begin_layout Abstract
 \begin_inset CommandInset citation
 LatexCommand citet
 key "gorjanc2008"
@@ -169,11 +153,6 @@ key "R-knitr"
 \end_inset
 
 , and we introduce the changes as well as a few new features in this article.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -263,11 +242,7 @@ bibfiles "LyX2-RJournal,LyX2-pkgs"
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Flex Address
-status collapsed
-
-\begin_layout Plain Layout
+\begin_layout Address
 Yihui Xie
 \begin_inset Newline newline
 \end_inset
@@ -281,11 +256,6 @@ Department of Statistics, Iowa State University
 \end_inset
 
 USA
-\end_layout
-
-\end_inset
-
-
 \begin_inset Newline newline
 \end_inset
 
@@ -302,17 +272,8 @@ xie@yihui.name
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Flex Address
-status collapsed
-
-\begin_layout Plain Layout
+\begin_layout Address
 Gregor Gorjanc
-\end_layout
-
-\end_inset
-
-
 \begin_inset Newline newline
 \end_inset
 
@@ -329,17 +290,8 @@ gregor.gorjanc@bf.uni-lj.si
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Flex Address
-status collapsed
-
-\begin_layout Plain Layout
+\begin_layout Address
 Jean-Marc Lasgouttes
-\end_layout
-
-\end_inset
-
-
 \begin_inset Newline newline
 \end_inset
 
@@ -348,23 +300,7 @@ Jean-Marc Lasgouttes
 status collapsed
 
 \begin_layout Plain Layout
-asgouttes@lyx.org
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{article}
+lasgouttes@lyx.org
 \end_layout
 
 \end_inset
