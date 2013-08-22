@@ -15,8 +15,6 @@ DefaultModule   knitr
 
 AddToPreamble
 	\usepackage{RJournal}
-	\usepackage[round]{natbib}
-	\bibliographystyle{abbrvnat}
 	\usepackage{booktabs}
 
 	\fancyhf{}
@@ -32,7 +30,6 @@ AddToPreamble
 	\AtEndDocument{%
 	  \end{article}
 	}
-	
 EndPreamble
 
 Style Abstract
