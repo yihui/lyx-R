@@ -24,12 +24,12 @@ idx1 <- grep("\\\\begin\\{article\\}", txt)
 if (length(idx1)) txt <- txt[-(1:(idx1-1))]
 # remove '\end{document}'
 idx2 <- grep("\\\\end\\{article\\}", txt)
-if (length(idx2)) txt <- txt[-(idx2:length(txt))]
+if (length(idx2)) txt <- txt[-((idx2+1):length(txt))]
 # This piece isn't need either
 idx3 <- grep("\\\\bibliographystyle", txt)
 if (length(idx3)) txt <- txt[-idx3]
 # LyX puts the entire directory in the bibliography piece but you only want your last name
-txt <- sub("\\\\bibliography\\{.*\\}", paste0("\\bibliography{", last.name, "}"), txt)
+txt <- sub("bibliography\\{.*\\}", paste0("bibliography{", last.name, "}"), txt)
 
 # If you put \pkg{} in \section{} or \subsection{}, it needs a special prefix (can this be done in LyX?)
 idx4 <- grep("\\\\section\\{.*\\\\pkg.*", txt)
