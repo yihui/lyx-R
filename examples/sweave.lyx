@@ -1,5 +1,5 @@
-#LyX 2.0 created this file. For more info see http://www.lyx.org/
-\lyxformat 413
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
 \textclass article
@@ -27,13 +27,13 @@ sweave
 \font_roman palatino
 \font_sans lmss
 \font_typewriter lmtt
+\font_math auto
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
-
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -44,15 +44,24 @@ sweave
 \use_hyperref false
 \papersize default
 \use_geometry true
-\use_amsmath 1
-\use_esint 1
-\use_mhchem 1
-\use_mathdots 1
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
 \cite_engine basic
+\cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
 \suppress_date false
+\justification true
 \use_refstyle 0
 \index Index
 \shortcut idx
@@ -197,19 +206,7 @@ Since LyX 2.0, Sweave can be used out of the box with any document class
 \family sans
 Sweave
 \family default
- module, which means we no longer need to modify the 
-\family sans
-preferences
-\family default
- file manually or add special layouts such as 
-\family sans
-literate-article.layout
-\family default
- and 
-\family sans
-literate-book.layout
-\family default
- like we did before.
+ module.
  We can add the 
 \family sans
 Sweave
@@ -229,7 +226,7 @@ status collapsed
 
 \begin_layout Plain Layout
 
-https://bitbucket.org/stat/lyx/downloads/sweave.pdf
+https://github.com/downloads/yihui/lyx/sweave.pdf
 \end_layout
 
 \end_inset
@@ -260,26 +257,33 @@ PATH
 \family sans
 PATH
 \family default
- under Windows, you may either learn it (e.g.
- 
+ under Windows, you may either use the R script 
+\family sans
+add-R-path-win.R
+\family default
+ in the repository 
 \begin_inset Flex URL
 status collapsed
 
 \begin_layout Plain Layout
 
-http://www.computerhope.com/issues/ch000549.htm
+https://github.com/yihui/lyx
 \end_layout
 
 \end_inset
 
-), or go to 
+ to change it automatically (not recommended; you should learn 
+\family sans
+PATH
+\family default
+ anyway), or go to 
 \family sans
 Tools\SpecialChar \menuseparator
 Preferences\SpecialChar \menuseparator
 Paths\SpecialChar \menuseparator
 PATH prefix
 \family default
- to add the bin path of R, which is often like 
+ to add the bin path of R (recommended), which is often like 
 \family sans
 C:
 \backslash
@@ -480,6 +484,11 @@ options(width = 70, useFancyQuotes = FALSE, digits = 4)
 
 \begin_layout Plain Layout
 
+@
+\end_layout
+
+\begin_layout Plain Layout
+
 <<sweave-manual, eval=FALSE, keep.source=TRUE>>=
 \end_layout
 
@@ -524,6 +533,11 @@ status open
 \begin_layout Plain Layout
 
 1:10 
+\end_layout
+
+\begin_layout Plain Layout
+
+@
 \end_layout
 
 \begin_layout Plain Layout
@@ -748,7 +762,7 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Quantiles of the first four variables in the 
@@ -878,12 +892,23 @@ status open
 
 \begin_layout Plain Layout
 \align center
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Both eps and pdf are set to true so that both latex and pdflatex work.
+ In practice, you would probably just choose one.
+\end_layout
+
+\end_inset
+
+
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-<<iris-pairs,fig=TRUE,width=4.5,height=4.5>>=
+<<iris-pairs,fig=TRUE,width=4.5,height=4.5,eps=TRUE,pdf=TRUE>>=
 \end_layout
 
 \begin_layout Plain Layout
@@ -902,7 +927,7 @@ pairs(iris, col = iris$Species)
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Scatter plot matrix of the 
@@ -942,7 +967,7 @@ status open
 
 \begin_layout Plain Layout
 
-<<iris-boxplots,fig=TRUE,width=7,height=2,keep.source=F>>=
+<<iris-boxplots,fig=TRUE,width=7,height=2,keep.source=F,eps=T,pdf=T>>=
 \end_layout
 
 \begin_layout Plain Layout
@@ -966,7 +991,7 @@ boxplot(Sepal.Length~Species,data=iris,horizontal=TRUE,xlab='Sepal.Length')
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Boxplots of sepal length grouped by species.
@@ -1248,7 +1273,7 @@ ae
 \end_layout
 
 \begin_layout Section
-Troubleshooting
+Trouble Shooting
 \end_layout
 
 \begin_layout Standard
@@ -1259,7 +1284,7 @@ View\SpecialChar \menuseparator
 View Messages
 \family default
 .
- This is extremely helpful for troubleshooting -- the process of R will
+ This is extremely helpful for trouble shooting -- the process of R will
  be shown in the message panel, and we will be able to know which chunk
  goes wrong in cases of errors.
  For example, when you compile this document, you can see messages like
@@ -1490,43 +1515,24 @@ How to use Sweave with beamer?
 \end_layout
 
 \begin_layout Standard
-You will end up with LaTeX errors if you use Sweave in beamer slides in
- LyX; the reason is the beamer frame that contains verbatim R code and output
- must have the 
+You will end up with LaTeX errors if you use Sweave in normal beamer slides
+ in LyX; the reason is the beamer frame that contains verbatim R code.
+ The solution is to use a 
+\emph on
+FragileFrame
+\emph default
+ instead of a normal 
+\emph on
+Frame
+\emph default
+, or to pass the option 
 \family typewriter
 fragile
 \family default
- option.
- However, currently there is no straightforward way to do this.
- One way is to write raw TeX code, and the other is to use the 
-\family sans
-beamer-fragile.module
-\family default
- discussed in 
-\begin_inset CommandInset href
-LatexCommand href
-name "#7273"
-target "http://www.lyx.org/trac/ticket/7273"
-
-\end_inset
-
- (put this file under the 
-\family sans
-layouts
-\family default
- directory of LyX user directory and reconfigure LyX).
- After including this module in your document, you should be able to use
- 
+ to the frame title via 
 \family sans
 Insert\SpecialChar \menuseparator
-Custom Insets\SpecialChar \menuseparator
-FragileFrame
-\family default
-, which is essentially 
-\family typewriter
-
-\backslash
-begin{frame}[fragile]
+Frame Options
 \family default
 .
 \end_layout
